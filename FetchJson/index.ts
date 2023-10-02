@@ -9,7 +9,6 @@ interface Todo {
 }
 
 axios.get(url).then(res => {
-
   const todo: Todo = res.data;
   // another way of doing it:
   // const asTodo = res.data as Todo;

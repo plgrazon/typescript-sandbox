@@ -52,7 +52,19 @@ console.log(coordinates); // {x: 10, y: 20};
 // 2.) When we declare a variable on one line and initialize later
 let words = ['red', 'green', 'blue'];
 let foundWord: boolean;
+// or
+// let foundWord: false -> this will use type inference
 
 for (let i = 0; i < words.length; i++) {
   if (words[i] === 'green') foundWord = true;
+}
+
+// 3.) Variable whose type cannot be inferred correctly
+let nums = [-10, -1, 12];
+let numsAboveZero: boolean | number = false;
+
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] > 0) {
+    numsAboveZero = numbers[i];
+  }
 }

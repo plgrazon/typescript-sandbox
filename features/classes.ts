@@ -8,6 +8,13 @@ class Vehicle {
   }
 }
 
-const vehicle = new Vehicle();
+class Car extends Vehicle {
+  // override 
+  drive(): void {
+    console.log('zoom zoom')
+  }
+}
+
+const vehicle = new Car();
 vehicle.drive();
 vehicle.honk();

@@ -22,9 +22,16 @@ class Vehicle {
   protected reverse(): void {
     console.log('moving back');
   }
+
+  private shift(): void {
+    console.log('shifting gear');
+  }
 }
 
 class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color);
+  }
   // override 
   // changing the access modifier wont work here because the parent modifier
   // is different
@@ -34,6 +41,7 @@ class Car extends Vehicle {
 
   // correct way:
   public drive(): void {
+    // this.shift(); <- This wont work, pirate is only available in the vehicle
     console.log('zoom zoom')
   }
 
@@ -46,7 +54,7 @@ class Car extends Vehicle {
   }
 }
 
-const vehicle = new Car('orange');
+const vehicle = new Car(4, 'orange');
 // vehicle.drive(); // this wont work anymore because drive is now private
 vehicle.honk();
 // correct way:

@@ -41,7 +41,7 @@ class Car extends Vehicle {
 
   // correct way:
   public drive(): void {
-    // this.shift(); <- This wont work, pirate is only available in the vehicle
+    // this.shift(); <- This wont work, private is only available in the vehicle
     console.log('zoom zoom')
   }
 

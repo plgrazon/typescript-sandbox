@@ -1,4 +1,4 @@
-interface Vehicle {
+interface VehicleTwo {
   name: string; // would still work if we remove the other types here
   year: Date;
   broken: boolean;
@@ -31,7 +31,7 @@ const drink = {
   }
 };
 
-const printVehicle = (vehicle: Vehicle): void => {
+const printVehicle = (vehicle: VehicleTwo): void => {
   console.log(vehicle.summary())
 }
 

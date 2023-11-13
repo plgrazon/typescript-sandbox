@@ -3,8 +3,9 @@
 
 import { Company } from "./Company";
 import { User } from "./User";
+import { Map } from "./Map";
 
-const htmlDiv: HTMLElement = document.getElementById("map");
-const mapOptions = { zoom: 1, center: {lat: 0, lng: 0} };
+const companyOne = new Company();
+const userOne = new User();
 
-new google.maps.Map(htmlDiv, mapOptions);
+const customMap = new Map();

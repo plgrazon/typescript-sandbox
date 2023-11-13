@@ -1,3 +1,13 @@
+import { Company } from "./Company";
+import { User } from "./User";
+
+interface MappableEntity {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
+
 export class Map {
   private map: google.maps.Map;
 
@@ -8,7 +18,13 @@ export class Map {
     this.map = new google.maps.Map(htmlDiv, mapOptions);
   }
 
-  public addMarker() {
-    console.log("u can access this");
+  public addMarker(entity: MappableEntity) {
+    new google.maps.Marker({
+      map: this.map,
+      position: {
+        lat: entity.location.lat,
+        lng: entity.location.lng,
+      },
+    });
   }
 }

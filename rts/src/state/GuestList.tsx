@@ -5,18 +5,18 @@ const GuestList = (): React.JSX.Element => {
   const [guests, setGuests] = useState<string[]>([]);
 
   const onClick = () => {
-    setGuests((prev) => [...prev, name]);
     setName("");
+    setGuests((prev) => [...prev, name]);
   };
 
   return (
     <div>
       <h1>Guest List</h1>
-      <div>
+      <ul>
         {guests.map((guest) => (
-          <p>{guest}</p>
+          <li key={guest}>{guest}</li>
         ))}
-      </div>
+      </ul>
       <input value={name} onChange={(event) => setName(event.target.value)} />
       <button onClick={onClick}>Add Guest</button>
     </div>
